@@ -7,6 +7,7 @@ MCZ Note: 1 create a listener of type EventListenerTouchOneByOne*,
 		    *binding one listener to many obj at the same time uses listener->clone()
 		  4 ?????? the obj binded with the listener touched is accessed by static_cast<Sprite *>(event->getCurrentTraget())
 		  but when it comes to multi-touch, obj can also be accessed by touch: use ->getID() and then find the obj by id in this->getChildren() array.
+		  5 ***get touch location: touch->getLocation or touch->getLocationInView (zero point in left-top)
 */
 
 
