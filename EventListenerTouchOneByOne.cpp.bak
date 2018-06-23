@@ -5,7 +5,7 @@ MCZ Note: 1 create a listener of type EventListenerTouchOneByOne*,
 			* onTouchBegin [](Touch * touch, Event * event){} where touch indicates the obj being touched while event indicates ??????
 		  3 bind the listener to specific object by _eventDispatcher->addEventListenerWithSceneGraphPriority(listener,obj);
 		    *binding one listener to many obj at the same time uses listener->clone()
-		  4 ?????? the obj binded with the listener touched is accessed by static_cast<Sprite *>(event->getCurrentTraget())
+		  4 the obj being touched is accessed by static_cast<Sprite *>(event->getCurrentTraget())
 		  but when it comes to multi-touch, obj can also be accessed by touch: use ->getID() and then find the obj by id in this->getChildren() array.
 */
 
@@ -31,7 +31,7 @@ auto myListener = EventListenerTouchOneByOne::create();
 myListener->setSwallowTouches(true);
 myListener->onTouchBegan = [](Touch* touch, Event* event)
 {
-	// 获取事件所绑定的 target???????????????????????/
+	// 获取事件所绑定的 target
 	auto target = static_cast<Sprite*>(event->getCurrentTarget());
 	// 获取当前点击点所在相对按钮的位置坐标
 	Point locationInNode = target->convertToNodeSpace(touch->getLocation());
