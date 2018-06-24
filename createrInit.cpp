@@ -1,5 +1,5 @@
 //creater & initializer
-
+// !!!!Rocker: to access objs in the new-designed class layer, try use tag and emun 
 
 //coocs2d std version
 #define CREATE_FUNC(__TYPE__) \  
